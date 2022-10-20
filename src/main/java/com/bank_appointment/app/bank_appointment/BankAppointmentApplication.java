@@ -8,6 +8,7 @@ public class BankAppointmentApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(BankAppointmentApplication.class, args);
+		//First push
 	}
 
 }
