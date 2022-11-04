@@ -7,12 +7,15 @@ import About from './pages/About';
 import Schedule from './pages/Schedule';
 import Checking from './pages/Checking';
 import logo from './bankLogo.png';
+import Information from './pages/Information';
 
 
 function App() {
 return (
-	<Router>
-  <img src={logo} width = '250' height = '120' alt = "Logo"/>
+  <>
+  <div className='header-color'>
+  <Router>
+  <img src={logo} width = '250' height = '120' alt = "Logo" />
 	<Navbar />
 	<Routes>
 		<Route path='/' exact component={Home} />
@@ -21,6 +24,10 @@ return (
     <Route path='/schedule' component = {Checking} />
 	</Routes>
 	</Router>
+  </div>
+	
+  <Information />
+  </>
 );
 }
 
