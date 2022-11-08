@@ -7,7 +7,6 @@ import About from './pages/About';
 import Schedule from './pages/Schedule';
 import Savings from './pages/Savings';
 import logo from './bank_logo.png';
-import Information from './pages/Information';
 import Home from './pages/Home';
 
 
