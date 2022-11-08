@@ -1,16 +1,9 @@
 import React from 'react';
 
-const About = () => {
+function About(){
 return (
-	<div
-	style={{
-		display: 'flex',
-		justifyContent: 'Right',
-		alignItems: 'Right',
-		height: '100vh'
-	}}
-	>
-	<h1>GeeksforGeeks is a Computer Science portal for geeks.</h1>
+	<div>
+	   <h1>This page contains information about about the bank.</h1>
 	</div>
 );
 };
