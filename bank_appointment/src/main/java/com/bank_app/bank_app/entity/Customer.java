@@ -22,6 +22,7 @@ public class Customer {
 
     private String name;
     private String email;
+    private Long phoneNumber;
 
 //    @OneToMany(mappedBy = "customer")
 //    private List<Appointment> appointments = new ArrayList<>();

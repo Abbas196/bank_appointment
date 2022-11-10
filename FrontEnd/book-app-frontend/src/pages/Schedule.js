@@ -1,10 +1,9 @@
 import React from 'react';
+import VisitPurpose from '../components/VisitPurpose';
 
 function Schedule(){
 return (
-	<div>
-	Appointment scheduling here
-	</div>
+	<VisitPurpose />
 );
 }
 
