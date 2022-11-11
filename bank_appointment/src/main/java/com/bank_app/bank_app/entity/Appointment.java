@@ -32,20 +32,20 @@ public class Appointment {
         this.time = time;
     }
 
-    public String getFirstname() {
-        return firstname;
+    public String getName() {
+        return name;
     }
 
-    public void setFirstname(String firstname) {
-        this.firstname = firstname;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getLastname() {
-        return lastname;
+    public String getLocation() {
+        return location;
     }
 
-    public void setLastname(String lastname) {
-        this.lastname = lastname;
+    public void setLocation(String location) {
+        this.location = location;
     }
 
     public String getEmail() {
@@ -59,10 +59,16 @@ public class Appointment {
     public String getPhno() {
         return phno;
     }
-
     public void setPhno(String phno) {
         this.phno = phno;
     }
+
+
+    public String getPurposeofvisit() { return purposeofvisit; }
+    public void setPurposeofvisit(String purposeofvisit) {
+        this.purposeofvisit = purposeofvisit;
+    }
+
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -73,22 +79,23 @@ public class Appointment {
     private String time;
     //@NotBlank
     //name,location, purpose of visit,
-    private String firstname;
-    private String lastname;
+    private String name;
+    private String location;
     private String email;
     private String phno;
+    private String purposeofvisit;
 
     public  Appointment(){
         super();
     }
-    public Appointment(long id, String date, String time, String firstname, String lastname, String email, String phno) {
+    public Appointment(long id, String date, String time, String name, String location, String email, String phno,String purposeofvisit) {
         super();
         this.id = id;
         this.date = date;
         this.time = time;
-        //name
-        this.firstname=firstname;
-        this.lastname=lastname;
+        this.name=name;
+        this. purposeofvisit= purposeofvisit;
+        this.location=location;
         this.email=email;
         this.phno=phno;
     }

@@ -57,10 +57,11 @@ public class AppointmentController {
         if (app.isPresent()){
             appointment1.setDate(appointment.getDate());
             appointment1.setTime(appointment.getTime());
-            appointment1.setFirstname(appointment.getFirstname());
-            appointment1.setLastname(appointment.getLastname());
+            appointment1.setName(appointment.getName());
+            appointment1.setLocation(appointment.getLocation());
             appointment1.setEmail(appointment.getEmail());
             appointment1.setPhno(appointment.getPhno());
+            appointment1.setPurposeofvisit(appointment.getPurposeofvisit());
 
             return new ResponseEntity<>(appointmentService.updateAppointment(appointment),HttpStatus.OK);
         } else {
