@@ -18,7 +18,11 @@ public class Locations {
 
     private Long id;
 
+    @Column(name = "Zip", nullable = false)
     private int zip;
 
+    @Column(name = "Address", nullable = false)
     private String address;
+
+
 }

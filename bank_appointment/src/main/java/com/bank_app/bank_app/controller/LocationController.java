@@ -1,8 +1,9 @@
 package com.bank_app.bank_app.controller;
 
 
-import com.bank_app.bank_app.service.LocationsService;
+import com.bank_app.bank_app.repository.LocationsRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -14,14 +15,15 @@ import org.springframework.web.bind.annotation.RestController;
 @CrossOrigin
 public class LocationController {
 
-    private final LocationsService locationsService;
+
+    @Autowired
+    private LocationsRepository repo;
 
 
 
     @CrossOrigin
     @GetMapping("/Locations")
-    public ResponseEntity<?> findAll(){
-        return new ResponseEntity<>(LocationsService.findAll(), HttpStatus.OK);
+    public ResponseEntity<?> findAll(){return new ResponseEntity<>(repo.findAll(), HttpStatus.OK);
     }
 
 }

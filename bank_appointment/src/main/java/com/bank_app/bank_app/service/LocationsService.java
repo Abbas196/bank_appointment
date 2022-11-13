@@ -28,7 +28,7 @@ public class LocationsService {
 
     @Transactional
     public static List<Locations> findAll(){
-
-        return locationsRepository.findAll();
+        List<Locations> Locations = LocationsService.findAll();
+        return Locations;
     }
 }
