@@ -24,4 +24,5 @@ public class LocationController {
         return new ResponseEntity<>(LocationsService.findAll(), HttpStatus.OK);
     }
 
+    //Practising Github
 }
