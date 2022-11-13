@@ -25,4 +25,6 @@ public class LocationController {
     }
 
     //Practising Github
+
+    //practising git 2
 }
