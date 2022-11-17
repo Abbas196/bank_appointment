@@ -21,6 +21,10 @@ public class Appointment {
 
     private String time;
 
+    private String date;
+
+    private String purpose;
+
     @ManyToOne
     @JoinColumn(name = "customer_id")
     @JsonIgnore

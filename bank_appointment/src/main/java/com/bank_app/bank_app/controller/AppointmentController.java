@@ -3,9 +3,12 @@ package com.bank_app.bank_app.controller;
 import com.bank_app.bank_app.entity.Appointment;
 import com.bank_app.bank_app.service.AppointmentService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RequiredArgsConstructor
 @RestController
@@ -21,5 +24,4 @@ public class AppointmentController {
         return new ResponseEntity<>(appointmentService.create(cus_Id, appointment), HttpStatus.CREATED);
 
     }
-
 }
