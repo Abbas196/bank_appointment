@@ -8,6 +8,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.*;
 import java.util.ArrayList;
+import java.util.List;
 
 
 @AllArgsConstructor
@@ -24,7 +25,7 @@ public class Customer {
     private String email;
     private Long phoneNumber;
 
-//    @OneToMany(mappedBy = "customer")
-//    private List<Appointment> appointments = new ArrayList<>();
+    @OneToMany(mappedBy = "customer")
+    private List<Appointment> appointments = new ArrayList<>();
 
 }

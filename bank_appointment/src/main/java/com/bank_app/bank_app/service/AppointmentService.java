@@ -1,80 +1,33 @@
 package com.bank_app.bank_app.service;
 
-import com.bank_app.bank_app.repository.AppointmentRepository;
 import com.bank_app.bank_app.entity.Appointment;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.bank_app.bank_app.entity.Customer;
+import com.bank_app.bank_app.repository.AppointmentRepository;
+import com.bank_app.bank_app.repository.CustomerRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
-import java.util.List;
-import java.util.Optional;
 
+@RequiredArgsConstructor
 @Service
 public class AppointmentService {
+    private final CustomerRepository customerRepository;
+    private final AppointmentRepository appointmentRepository;
 
-    @Autowired
-    AppointmentRepository appointmentRepository;
+    @Transactional
+    public Appointment create(Long cus_id, Appointment appointment){
+        Customer customer;
+        System.out.println("location " + appointment.getLocation() );
+        System.out.println("time " + appointment.getTime() );
+        System.out.println("customer id " + cus_id );
+        customer = customerRepository.findById(cus_id).orElseThrow(()->new IllegalArgumentException("Check customer Id"));
 
-    public Appointment create(Appointment appointment) {
-        Appointment ap = null;
-        try {
-            ap = appointmentRepository.save(appointment);
-        } catch (Exception e) {
-            System.out.println(e);
-        }
-        return ap;
+        System.out.println("setCustomer ");
+        appointment.setCustomer(customer);
+        System.out.println("Method call ");
 
+        return appointmentRepository.save(appointment);
     }
 
-    public List<Appointment> getAllAppointments() {
-        List<Appointment> ap = null;
-        try {
-            ap = appointmentRepository.findAll();
-        } catch (Exception e) {
-            System.out.println(e);
-        }
-        return ap;
-
-    }
-
-    public Optional<Appointment> getAppointmentById(long id) {
-        Optional<Appointment> ap = null;
-        try {
-            ap = appointmentRepository.findById(id);
-        } catch (Exception e) {
-            System.out.println(e);
-        }
-        return ap;
-
-    }
-
-    public Optional<Appointment> getAppointmentByEmail(String email) {
-        Optional<Appointment> ap = null;
-        try {
-            //ap = appointmentRepository.getAppointmentByEmail(email);
-        } catch (Exception e) {
-            System.out.println(e);
-        }
-        return ap;
-
-    }
-
-    public Appointment updateAppointment(Appointment appointment) {
-        Appointment ap = null;
-        try {
-            ap = appointmentRepository.save(appointment);
-        } catch (Exception e) {
-            System.out.println(e);
-        }
-        return ap;
-    }
-
-    public void deleteAppointment(Appointment appointment) {
-        Optional<Appointment> ap = null;
-        try {
-            appointmentRepository.delete(appointment);
-        } catch (Exception e) {
-            System.out.println(e);
-        }
-
-    }
 }
