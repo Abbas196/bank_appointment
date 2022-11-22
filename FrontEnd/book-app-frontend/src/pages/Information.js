@@ -1,4 +1,3 @@
-import Appointment from "./Appointment";
 const Information = ()=>{
     return(
         <>
@@ -10,9 +9,6 @@ const Information = ()=>{
             <h2>New UCM Checking</h2>
             <h2>Customers</h2>
             <h5>open an account and setup a direct deposit</h5>
-        </div>
-        <div style={{float:'right', paddingBottom:'200px'}}>
-            <Appointment />
         </div>
         </>
     );
