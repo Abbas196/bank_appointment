@@ -17,11 +17,28 @@ import java.util.List;
 public class AppointmentController {
     private final AppointmentService appointmentService;
 
-    @PostMapping("/customers/{customerId}/appointment")
-    public ResponseEntity<?> createAppointment(@PathVariable(value = "customerId") Long cus_Id , @RequestBody Appointment appointment){
+    @PostMapping("/customers/{customerId}/appointments")
+    public ResponseEntity<?> createAppointment(@PathVariable(value = "customerId") Long cus_Id, @RequestBody Appointment appointment) {
 
         System.out.println("cus_Id " + cus_Id);
         return new ResponseEntity<>(appointmentService.create(cus_Id, appointment), HttpStatus.CREATED);
+
+    }
+
+    @PatchMapping("/customers/{customerId}/appointments/{appointmentId}")
+    public ResponseEntity<?> updateAppointment(@PathVariable(value = "customerId") Long customerId, @PathVariable(value = "appointmentId") Long appointment_id, @RequestBody Appointment appointment) {
+
+        System.out.println("appointment_id " + appointment_id);
+        return new ResponseEntity<>(appointmentService.update(appointment_id, appointment), HttpStatus.OK);
+    }
+
+    @DeleteMapping("/customers/{customerId}/appointments/{appointmentId}")
+    public ResponseEntity<?> deleteAppointment(@PathVariable(value = "customerId") Long customerId, @PathVariable(value = "appointmentId") Long appointment_id, @RequestBody Appointment appointment) {
+
+        System.out.println("appointment_id " + appointment_id);
+        appointmentService.delete(appointment_id);
+        return new ResponseEntity<>(HttpStatus.OK);
+
 
     }
 }

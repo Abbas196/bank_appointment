@@ -19,14 +19,14 @@ import java.util.Optional;
 public class CustomerController {
     private final CustomerService customerService;
 
-    @PostMapping("/customer")
+    @PostMapping("/customers")
     public ResponseEntity<?> save(@RequestBody Customer customer){
 
         System.out.println("title " + customer.getName());
         return new ResponseEntity<>(customerService.create(customer), HttpStatus.CREATED);
 
     }
-    @GetMapping("/customer/{customerId}")
+    @GetMapping("/customers/{customerId}")
     public List<Appointment> customerDetails(@PathVariable(value = "customerId") Long id){
         return customerService.getAppointmentList(id);
     }
