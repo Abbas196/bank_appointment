@@ -1,5 +1,5 @@
-import react from 'react';
-import { Button, Container, Nav, Navbar } from 'react-bootstrap';
+import React from 'react';
+import {  Container, Nav, Navbar } from 'react-bootstrap';
 import {Link} from 'react-router-dom';
 import logo from '../bank_logo.png';
 

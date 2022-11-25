@@ -5,8 +5,8 @@ import { Route,Routes } from 'react-router-dom';
 import About from './pages/About';
 import Schedule from './pages/Schedule';
 import Savings from './pages/Savings';
-import logo from './bank_logo.png';
 import Home from './pages/Home';
+import Locations from './pages/Locations';
 
 function App() {
 return (
@@ -18,6 +18,8 @@ return (
         <Route path="/savings" element={<Savings/>} exact />
         <Route path="/Schedule" element={<Schedule/>} exact />
         <Route path="/about" element={<About/>} exact />
+        <Route path="/locations" element={<Locations />} exact />
+        
         </Routes>
       </Container>
     </div>

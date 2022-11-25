@@ -1,9 +1,10 @@
 import React from 'react';
-import VisitPurpose from '../components/VisitPurpose';
-
+import CreateCustomer from '../components/CreateCustomer';
 function Schedule() {
 	return (
-		<VisitPurpose />
+		<div>
+			<CreateCustomer />
+		</div>
 	);
 }
 
