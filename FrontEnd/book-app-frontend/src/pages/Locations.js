@@ -1,15 +1,12 @@
 import React from 'react';
-import {BrowserRouter as Router} from 'react-router-dom';
-import Locationslist from './Locationslist';
+import {useLocation} from 'react-router-dom';
 
-function Locations(){
+const Locations = ()=>{
+    const location = useLocation();
     return(
-        <div>
-            <Router>
-            
-                    <Locationslist />
-            </Router>
-        </div>
+        <>
+        <h1>{location.state.name}</h1>
+        </>
     )
 }
 

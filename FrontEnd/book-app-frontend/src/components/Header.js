@@ -1,29 +1,12 @@
-import react from 'react';
-import { Button, Container, Nav, Navbar } from 'react-bootstrap';
-import {Link} from 'react-router-dom';
+import logo from '../bank_logo.png';
+import React from 'react';
 
- 
-function App() {
-  return (
-<>
-  <Navbar bg="light" variant="light">
-    <Container>
-    <Link to ="/" className = "navbar-brand">Home</Link>
-
-    <Nav className="me-auto">
-      <Link to ="/savings" className = "nav-link">Checkings and Savings</Link>
-      <Link to ="/schedule" className = "nav-link">Schedule a Meeting</Link>
-      <Link to ="/about" className = "nav-link">About</Link>
- 
-    </Nav>
-    </Container>
-  </Navbar>
-  <br />
- 
- 
-</>
-  );
+const Header = ()=>{
+    return(
+<div style={{marginLeft:'450px'}}>
+<img src={logo} width = '250' height = '120' alt = 'img not available' />
+</div>
+    )
 }
 
-export default App;
-
+export default Header;

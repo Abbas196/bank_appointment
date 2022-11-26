@@ -1,10 +1,11 @@
 import React from 'react';
-import VisitPurpose from '../components/VisitPurpose';
-
-function Schedule(){
-return (
-	<VisitPurpose />
-);
+import CreateCustomer from '../components/CreateCustomer';
+function Schedule() {
+	return (
+		<div>
+			<CreateCustomer />
+		</div>
+	);
 }
 
 export default Schedule;
