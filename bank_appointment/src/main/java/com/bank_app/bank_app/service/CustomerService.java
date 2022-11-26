@@ -30,4 +30,8 @@ public class CustomerService {
         return customer.get().getAppointments();
     }
 
+    public List<Customer> getCustomers(){
+        return customerRepository.findAll();
+    }
+
 }

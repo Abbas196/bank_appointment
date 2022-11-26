@@ -6,6 +6,7 @@ import About from './pages/About';
 import Schedule from './pages/Schedule';
 import Savings from './pages/Savings';
 import Home from './pages/Home';
+import VisitPurpose from './pages/VisitPurpose';
 import Locations from './pages/Locations';
 
 function App() {
@@ -18,6 +19,7 @@ return (
         <Route path="/savings" element={<Savings/>} exact />
         <Route path="/Schedule" element={<Schedule/>} exact />
         <Route path="/about" element={<About/>} exact />
+        <Route path="/VisitPurpose" element={<VisitPurpose />} exact />
         <Route path="/locations" element={<Locations />} exact />
         
         </Routes>

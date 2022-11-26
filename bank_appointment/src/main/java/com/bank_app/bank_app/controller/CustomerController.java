@@ -31,4 +31,9 @@ public class CustomerController {
         return customerService.getAppointmentList(id);
     }
 
+    @GetMapping("/customers")
+    public ResponseEntity<?> findAll(){
+        return new ResponseEntity<>(customerService.getCustomers(),HttpStatus.OK);
+    }
+
 }
