@@ -11,8 +11,7 @@ const CreateCustomer = ()=>{
   const[customer, setCustomer] = useState({
     name:"",
     email:"",
-    phone:""
-
+    phoneNumber:""
   })
   const handleChange = (e) =>{
     const name = e.target.name;
@@ -26,8 +25,21 @@ const CreateCustomer = ()=>{
     console.log(customer);
     axios.post('http://localhost:8070/customers',customer).then(res =>{
       console.log("created a new customer");
-      navigate('/locations',{state:customer});
+      navigate('/VisitPurpose',{state:customer});
+    }).catch(function(error){
+      if(error.response){
+        console.log(error.response.data);
+        console.log(error.response.status);
+        axios.get('http://localhost:8070/customers').then(res =>{
+          for(var i = 0;i<res.data.length;i++){
+            if(res.data[i].email === customer.email){
+              navigate('/VisitPurpose',{state:res.data[i]});
+            }
+          }
+        });
+      }
     });
+
   }
   return(
     <>
@@ -53,7 +65,7 @@ const CreateCustomer = ()=>{
     </Form.Group>
     <Form.Group>
       <Form.Label>Enter Phone Number:</Form.Label>
-      <Form.Control type="text" name = "phone"   onChange={handleChange}/>
+      <Form.Control type="text" name = "phoneNumber"   onChange={handleChange}/>
     </Form.Group>
     <br></br>
     <Button variant="primary" type="submit">

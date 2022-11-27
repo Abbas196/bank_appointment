@@ -9,4 +9,3 @@ insert into Locations (zip,address) values (64030,"12018 S U.S. 71 Hwy, Grandvie
 
 
 
-
