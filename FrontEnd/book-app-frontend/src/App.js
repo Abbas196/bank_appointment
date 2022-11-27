@@ -8,7 +8,6 @@ import Savings from './pages/Savings';
 import Home from './pages/Home';
 import VisitPurpose from './pages/VisitPurpose';
 import Locations from './pages/Locations';
-import DateTime from './pages/DateTime';
 
 function App() {
 return (
@@ -22,8 +21,6 @@ return (
         <Route path="/about" element={<About/>} exact />
         <Route path="/VisitPurpose" element={<VisitPurpose />} exact />
         <Route path="/locations" element={<Locations />} exact />
-        <Route path="/DateTime" element={<DateTime />} exact />
-       
         
         </Routes>
       </Container>
