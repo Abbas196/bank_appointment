@@ -9,6 +9,7 @@ import Home from './pages/Home';
 import VisitPurpose from './pages/VisitPurpose';
 import Locations from './pages/Locations';
 import CustomerAppointments from './pages/CustomerAppointments';
+import DateTime from './pages/DateTime';
 
 function App() {
 return (
@@ -23,6 +24,8 @@ return (
         <Route path="/VisitPurpose" element={<VisitPurpose />} exact />
         <Route path="/locations" element={<Locations />} exact />
         <Route path="/CustomerAppointments" element={<CustomerAppointments />} exact />
+        <Route path="/DateTime" element={<DateTime />} exact />
+       
         
         </Routes>
       </Container>
