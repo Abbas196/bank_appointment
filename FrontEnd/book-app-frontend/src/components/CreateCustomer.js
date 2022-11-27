@@ -8,6 +8,9 @@ import { useNavigate } from 'react-router-dom';
 
 const CreateCustomer = ()=>{
   const navigate = useNavigate();
+  /**
+   * const setCustomer(){}
+   * / */
   const[customer, setCustomer] = useState({
     name:"",
     email:"",
