@@ -12,6 +12,7 @@ const Locations = ()=>{
     console.log(location.state.name);
     console.log(location.state.purpose);
     const navigate = useNavigate();
+    const [show,setShow]=useState(false);
     const[Locations, setLocations] = useState({
         zip:"",
         address:"",
@@ -23,14 +24,15 @@ const Locations = ()=>{
           return{...prev,[zip]:value};
         })
     };
-    const handleSubmit = (e)=>{
-        e.preventDefault();
-        console.log(Locations);
-        axios.post('http://localhost:8070/customers/customers.id/Locations',Locations).then(res =>{
-          console.log("Selected location");
-          navigate('/DateTime',{state:Locations});
-        })
-    };
+    const changeDisplay = (e)=>{
+
+      setShow(true)
+      console.log("clicked for changed");
+      console.log(show)
+  };
+  const handleSubmit = (e)=>{
+
+};
 
     // this is for your reference Aayush so that you can check how to transfer states between the pages.
     //check previous two pages how I have used useState and modified states and forward it to the next page.
@@ -69,7 +71,7 @@ const Locations = ()=>{
                 </Form.Group>
             </ Form>
             <br></br>
-            <Button variant="primary" type="submit">
+            <Button variant="primary" type="submit" onClick={changeDisplay}>
             Search
             </Button>
             <div style={{ display: 'block',
@@ -77,7 +79,7 @@ const Locations = ()=>{
               padding: 15 }}></div>
             </div>
 
-            <LocationsListDisplay />
+            {show && <LocationsListDisplay />}
            
             
         </>

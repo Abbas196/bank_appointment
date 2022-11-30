@@ -1,6 +1,14 @@
-import React from 'react';
 import LocationsList from '../LocationsList.json';
+import {useLocation, useNavigate} from 'react-router-dom';
+import Button from 'react-bootstrap/Button';
+import React, { useState } from 'react';
+
  function LocationsListDisplay(){
+    const navigate = useNavigate();
+    const[Locations, setLocations] = useState({
+        zip:"",
+        address:"",
+    })
     const DisplayData=LocationsList.map(
         (info)=>{
             return(
@@ -11,9 +19,18 @@ import LocationsList from '../LocationsList.json';
             )
         }
     )
+    const handleSubmit = (e)=>{
+
+        console.log("click for submit");
+        console.log(e.target.getAttribute('data-zip'))
+        /* Change the url or api endpoint*/ 
+        //   console.log("Selected location");
+        // navigate('/DateTime',{state:Locations}); /* Add the next page url*/
+        // })
+    };
  
-    return(
-        <div>
+    return DisplayData.map(data=>{
+            return <div>
             <table class="table table-striped">
                 <thead>
                     <tr>
@@ -22,15 +39,13 @@ import LocationsList from '../LocationsList.json';
                     </tr>
                 </thead>
                 <tbody>
-                 
-                    
-                    {DisplayData}
-                    
+                 {data}
+                 <div onClick={handleSubmit} type="
+                 submit" data-zip={data.zip}>S</div>
                 </tbody>
             </table>
-             
         </div>
-    )
+        })
  }
  
  export default LocationsListDisplay;
