@@ -31,6 +31,9 @@ const VisitPurpose = ()=>{
         e.preventDefault();
         navigate('/locations',{state:customerData});
     }
+    const handleCustomerAppointments = ()=>{
+      navigate('/CustomerAppointments',{state:customerData});
+    }
     return(
         <>
         <Header />
@@ -49,7 +52,7 @@ const VisitPurpose = ()=>{
         <br></br>
         <Button type='submit' variant="primary" size="sm" style={{marginTop:'20px'}}>Next</Button>
         </form>
-        <Button type='submit' variant="primary" size="sm" style={{marginTop:'20px',marginLeft:'250px'}}>Click here to Manage an Existing Appointment</Button>
+        <Button type='submit' onClick={handleCustomerAppointments} variant="primary" size="sm" style={{marginTop:'20px',marginLeft:'250px'}}>Click here to Manage an Existing Appointment</Button>
         </>
     )
 }

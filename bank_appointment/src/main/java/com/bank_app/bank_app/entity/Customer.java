@@ -24,7 +24,7 @@ public class Customer {
     private String name;
     @Column(unique = true)
     private String email;
-    private Long phoneNumber;
+    private String phoneNumber;
 
     @OneToMany(mappedBy = "customer")
     private List<Appointment> appointments = new ArrayList<>();

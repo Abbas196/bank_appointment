@@ -32,5 +32,4 @@ public class Appointment {
     @JsonIgnore
     private Customer customer;
 
-
 }
