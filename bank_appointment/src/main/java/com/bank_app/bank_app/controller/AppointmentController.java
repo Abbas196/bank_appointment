@@ -32,12 +32,12 @@ public class AppointmentController {
         return new ResponseEntity<>(appointmentService.update(appointment_id, appointment), HttpStatus.OK);
     }
 
-    @DeleteMapping("/customers/{customerId}/appointments/{appointmentId}")
-    public ResponseEntity<?> deleteAppointment(@PathVariable(value = "customerId") Long customerId, @PathVariable(value = "appointmentId") Long appointment_id, @RequestBody Appointment appointment) {
+    @DeleteMapping("/customers/appointments/{appointmentId}")
+    public void deleteAppointment(@PathVariable(value = "appointmentId") Long appointment_id) {
 
         System.out.println("appointment_id " + appointment_id);
         appointmentService.delete(appointment_id);
-        return new ResponseEntity<>(HttpStatus.OK);
+        System.out.println("Appointment Deleted");
 
 
     }
