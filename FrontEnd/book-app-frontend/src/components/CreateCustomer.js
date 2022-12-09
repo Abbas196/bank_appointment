@@ -47,12 +47,16 @@ const CreateCustomer = ()=>{
   return(
     <>
     <Header />
+    <div style={{ display: 'block',
+              width: 600, 
+              padding: 10 }}></div>
+
 
     <h4 style={{marginLeft:'30px'}}>Schedule a meeting</h4>
-    <p>-------------------------------------------------------------------------------------------------
-
-    -----------------------------------------------------------------------------------------------------
-    </p>
+    <div style={{ display: 'block',
+              width: 600, 
+              padding: 30 }}>
+</div>
     <div style={{ display: 'block',
               width: 600, 
               padding: 30 }}>

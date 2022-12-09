@@ -37,8 +37,20 @@ const VisitPurpose = ()=>{
     return(
         <>
         <Header />
+        <div style={{ display: 'block',
+              width: 600, 
+              padding: 10 }}></div>
+
         <h3 style={{color:'red'}}>Special Message : </h3>
+        <div style={{ display: 'block',
+              width: 600, 
+              padding: 20 }}></div>
+
         <h6>We're scheduling meetings by phone and in person, based on your preference</h6>
+        <div style={{ display: 'block',
+              width: 600, 
+              padding: 20 }}></div>
+
         <form  onSubmit={SubmitForm}>
         <select 
          value={purpose} 
@@ -49,10 +61,14 @@ const VisitPurpose = ()=>{
           </option>
         ))}
       </select>
-        <br></br>
-        <Button type='submit' variant="primary" size="sm" style={{marginTop:'20px'}}>Next</Button>
+      <div style={{ display: 'block',
+              width: 600, 
+              padding: 20 }}></div>
+
+        
+        <Button type='submit' variant="primary" size="md" style={{marginTop:'20px'}}>Next</Button>
         </form>
-        <Button type='submit' onClick={handleCustomerAppointments} variant="primary" size="sm" style={{marginTop:'20px',marginLeft:'250px'}}>Click here to Manage an Existing Appointment</Button>
+        <Button type='submit' onClick={handleCustomerAppointments} variant="primary" size="lg" style={{marginTop:'20px',marginRight:'250px'}}>Click here to Manage an Existing Appointment</Button>
         </>
     )
 }
